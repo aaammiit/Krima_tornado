@@ -121,8 +121,8 @@
                             Profiles
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="/make_qc">Create QC User</a></li>
-                            <li><a class="dropdown-item" href="/make_ed">Create Editor</a></li>
+                            <li><a class="dropdown-item" href="/make_qc">Create QC Profile</a></li>
+                            <li><a class="dropdown-item" href="/make_ed">Create Editor Profile</a></li>
                             <li>
                                 <hr class="dropdown-divider text-white">
                             </li>
@@ -132,24 +132,17 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
-                            Report's & User's
+                            Reports And Users
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="/qc_file_record">Send Files Record</a></li>
-                            <li><a class="dropdown-item" href="/ed_file_record">Recive Files Record</a></li>
-                            <li><a class="dropdown-item" href="/all_user">Available User's</a></li>
+                            <li><a class="dropdown-item" href="/qc_file_record">Sent Files Status</a></li>
+                            <li><a class="dropdown-item" href="/ed_file_record">Received Files Status</a></li>
+                            <li><a class="dropdown-item" href="/all_user">Users List</a></li>
 
                         </ul>
                     </li>
-                    <li class="nav-item">
-                        <button class="nav-link bg-dark" aria-current="page" href="#" style="border: none;" id="bt1"
-                            onclick="showform()">Form</button>
-                    </li>
-                    <li class="nav-item">
-                        <button class="nav-link bg-dark" aria-current="page" href="#" style="border: none;" id="bt2"
-                            hidden onclick="hideform()">Disable</button>
-                    </li>
-                    <li class="nav-item" style="margin-left: 250px;">
+                    
+                    <li class="nav-item" style="margin-left: 350px;">
                         <p class="text-light fs-6 nav-link active "><strong class="text-light">User - </strong>
                             <b>{{user}}</b></p>
 
@@ -204,7 +197,7 @@
     </div>
     <div class="container">
         <h2 class="text-center text-dark" style="font-weight: 700;">
-            <marquee behavior="" direction="">Admin Dashboard</marquee>
+           Admin Dashboard
         </h2>
 
         {% if data %}
@@ -277,11 +270,11 @@
 
         </div>
         {%endif%}
-        <div class="conatiner my-4" hidden id="frm" style="margin-top: 10px;">
+        <div class="conatiner my-4"  id="frm" style="margin-top: 10px;">
             <h3 class=" text-center text-dark">File Upload Form</h3>
             <form action="" method="post" enctype="multipart/form-data">
                 {% csrf_token %}
-                <input type="file" name="file" id="" class="form-control p-2 " style="border-radius: 20px;">
+                <input type="file" name="file" id="" class="form-control p-2 " style="border-radius: 20px;" required>
                 <br>
                 <div class="text-center">
                     <button type="submit" class="btn btn-success my-2">Upload</button>

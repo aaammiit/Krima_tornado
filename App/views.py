@@ -220,7 +220,7 @@ def Qc_history(request):
     stats = []
     combined_list=[]
     for qc_data in data:
-        file_path = f'{settings.BASE_DIR}\\{qc_data.qc_file}'
+        file_path = f'{settings.BASE_DIR}//{qc_data.qc_file}'
         with open(file_path, 'r') as f:
             qc_file_data = json.load(f)
 
@@ -338,7 +338,7 @@ def QC_home(request):
     data=my_Qc_data.objects.filter(user=user)
     stats = []
     for qc_data in data:
-        file_path = f'{settings.BASE_DIR}\\{qc_data.qc_file}'
+        file_path = f'{settings.BASE_DIR}//{qc_data.qc_file}'
         with open(file_path, 'r') as f:
             qc_file_data = json.load(f)
 
