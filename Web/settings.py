@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-h=x0t_%ohdxzyv+ky741m!h#sdl*eh9y5+)=#59m5_ju3r(xgu
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -117,9 +117,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 import os
 STATIC_URL = 'static/'
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'App/static'),
-]
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'App/static'),]
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 
 MEDIA_URL='www/as/asd/adf/'
