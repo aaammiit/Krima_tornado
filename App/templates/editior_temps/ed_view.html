@@ -729,29 +729,29 @@
                     <td style="font-weight: 700;"> <a href="/ed_edit_data/{{id}}/{{forloop.counter0}}"
                             class="btn btn-success text-center" style="width: 100px;">Updated</a>
                     </td>
-                    <td style="font-weight: 700;" class="text-success text-center">{{i.collated_sr_no}}</td>
+                    <td style="font-weight: 700;" class="text-success text-center" >{{i.collated_sr_no}}</td>
                     <td style="font-weight: 700;" class="text-success text-center">{{i.sr_no}}</td>
                     <td><textarea name="" id="" cols="30" class="text-success text-center"
-                            style="font-weight: 700;">{{i.Article}}</textarea></td>
+                            style="font-weight: 700;" readonly>{{i.Article}}</textarea></td>
                     <td style="font-weight: 700;" class="text-success text-center">{{i.Date}}</td>
                     <td style="font-weight: 700;" class="text-success text-center">{{i.Regulatory}}</td>
                     <td><textarea name="" id="" cols="30" style="font-weight: 700;"
-                            class="text-success text-center">{{i.Title}}</textarea></td>
+                            class="text-success text-center" readonly>{{i.Title}}</textarea></td>
                     <td><textarea name="" id="" cols="30" style="font-weight: 700;"
-                            class="text-success text-center">{{i.URL}}</textarea></td>
+                            class="text-success text-center" readonly>{{i.URL}}</textarea></td>
                     <td style="font-weight: 700;" class="text-success text-center">{{i.KRIMA_status}}</td>
                     <td style="font-weight: 700;" class="text-success text-center">{{i.KRIMA_true_false}}</td>
                     <td style="font-weight: 700;" class="text-success text-center">{{i.KRIMA_type}}</td>
                     <td style="font-weight: 700;" class="text-success text-center">{{i.KRIMA_notes}}</td>
-                    <td style="font-weight: 700;" class="text-success text-center">
+                    <td style="font-weight: 700;" class="text-success text-center" >
                         {{i.KRIMA_edited_gpt_person_or_business}}</td>
                     <td><textarea name="" id="" cols="30" class="text-success text-center"
-                            style="font-weight: 700;">{{i.KRIMA_edited_gpt_company_check}}</textarea></td>
+                            style="font-weight: 700;" readonly>{{i.KRIMA_edited_gpt_company_check}}</textarea></td>
                     <td><textarea name="" id="" cols="30" class="text-success text-center"
-                            style="font-weight: 700;">{{i.parent_company_name}}</textarea>
+                            style="font-weight: 700;" readonly>{{i.parent_company_name}}</textarea>
                     </td>
                     <td><textarea name="" id="" cols="30" class="text-success text-center"
-                            style="font-weight: 700;">{{i.KRIMA_civil_penalty_validated}}</textarea></td>
+                            style="font-weight: 700;" readonly>{{i.KRIMA_civil_penalty_validated}}</textarea></td>
                     <td style="font-weight: 700;" class="text-success text-center">
                         {{i.KRIMA_civil_penalty_cleansed}}</td>
                     <td style="font-weight: 700;" class="text-success text-center">{{i.KRIMA_currency}}</td>
@@ -759,7 +759,7 @@
                     </td>
                     <td>
                         <textarea name="" id="" cols="30" class="text-success text-center"
-                            style="font-weight: 700;">{{i.KRIMA_disgorgement_restitution_usd}}</textarea>
+                            style="font-weight: 700;" readonly>{{i.KRIMA_disgorgement_restitution_usd}}</textarea>
                     </td>
                     <td style="font-weight: 700;" class="text-success text-center">{{i.KRIMA_imposed_penalty}}
                     </td>
@@ -767,8 +767,9 @@
                     </td>
                     <td>
                         <textarea name="" id="" cols="30" class="text-success text-center"
-                            style="font-weight: 700;"> {{i.KRIMA_non_monetary_penalty}}</textarea>
+                            style="font-weight: 700;" readonly> {{i.KRIMA_non_monetary_penalty}}</textarea>
                     </td>
+
 
                     {%elif i.Ok == '0'%}
                     <td style="font-weight: 700;"> <a href="/ed_edit_data/{{id}}/{{forloop.counter0}}"
@@ -779,15 +780,15 @@
                     <td style="font-weight: 700;color:rgba(255, 102, 0, 0.567);" class="text-center">{{i.sr_no}}
                     </td>
                     <td><textarea name="" id="" cols="30" style="font-weight: 700;color:rgba(255, 102, 0, 0.567);"
-                            class="">{{i.Article}}</textarea></td>
+                            class="text-center" readonly>{{i.Article}}</textarea></td>
                     <td style="font-weight: 700;color:rgba(255, 102, 0, 0.567);" class=" text-center">{{i.Date}}
                     </td>
                     <td style="font-weight: 700;color:rgba(255, 102, 0, 0.567);" class=" text-center">
                         {{i.Regulatory}}</td>
                     <td><textarea name="" id="" cols="30" style="font-weight: 700;color:rgba(255, 102, 0, 0.567);"
-                            class="">{{i.Title}}</textarea></td>
+                            class="text-center" readonly>{{i.Title}}</textarea></td>
                     <td><textarea name="" id="" cols="30" style="font-weight: 700;color:rgba(255, 102, 0, 0.567);"
-                            class="">{{i.URL}}</textarea></td>
+                            class="text-center" readonly>{{i.URL}}</textarea></td>
                     <td style="font-weight: 700;color:rgba(255, 102, 0, 0.567);" class=" text-center">
                         {{i.KRIMA_status}}</td>
                     <td style="font-weight: 700;color:rgba(255, 102, 0, 0.567);" class=" text-center">
@@ -799,13 +800,13 @@
                     <td style="font-weight: 700;color:rgba(255, 102, 0, 0.567);" class=" text-center">
                         {{i.KRIMA_edited_gpt_person_or_business}}</td>
                     <td><textarea name="" id="" cols="30" class=" text-center"
-                            style="font-weight: 700;color:rgba(255, 102, 0, 0.567);">{{i.KRIMA_edited_gpt_company_check}}</textarea>
+                            style="font-weight: 700;color:rgba(255, 102, 0, 0.567);" readonly>{{i.KRIMA_edited_gpt_company_check}}</textarea>
                     </td>
                     <td><textarea name="" id="" cols="30" class=" text-center"
-                            style="font-weight: 700;color:rgba(255, 102, 0, 0.567);">{{i.parent_company_name}}</textarea>
+                            style="font-weight: 700;color:rgba(255, 102, 0, 0.567);" readonly>{{i.parent_company_name}}</textarea>
                     </td>
                     <td><textarea name="" id="" cols="30" class=" text-center"
-                            style="font-weight: 700;color:rgba(255, 102, 0, 0.567);">{{i.KRIMA_civil_penalty_validated}}</textarea>
+                            style="font-weight: 700;color:rgba(255, 102, 0, 0.567);"readonly>{{i.KRIMA_civil_penalty_validated}}</textarea>
                     </td>
                     <td style="font-weight: 700;color:rgba(255, 102, 0, 0.567);" class=" text-center">
                         {{i.KRIMA_civil_penalty_cleansed}}
@@ -817,7 +818,7 @@
                     </td>
                     <td>
                         <textarea name="" id="" cols="30" class=" text-center"
-                            style="font-weight: 700;color:rgba(255, 102, 0, 0.567);">{{i.KRIMA_disgorgement_restitution_usd}}</textarea>
+                            style="font-weight: 700;color:rgba(255, 102, 0, 0.567);" readonly>{{i.KRIMA_disgorgement_restitution_usd}}</textarea>
                     </td>
                     <td style="font-weight: 700;color:rgba(255, 102, 0, 0.567);" class=" text-center">
                         {{i.KRIMA_imposed_penalty}}
@@ -827,7 +828,7 @@
                     </td>
                     <td>
                         <textarea name="" id="" cols="30" class=" text-center"
-                            style="font-weight: 700;color:rgba(255, 102, 0, 0.567);"> {{i.KRIMA_non_monetary_penalty}}</textarea>
+                            style="font-weight: 700;color:rgba(255, 102, 0, 0.567);" readonly> {{i.KRIMA_non_monetary_penalty}}</textarea>
                     </td>
                     {%elif i.Ok == '2'%}
                     <td style="font-weight: 700;"> <a href="/ed_edit_data/{{id}}/{{forloop.counter0}}"
@@ -836,13 +837,13 @@
                     <td style="font-weight: 700;" class="text-center text-danger">{{i.collated_sr_no}}</td>
                     <td style="font-weight: 700;" class="text-center text-danger">{{i.sr_no}}</td>
                     <td><textarea name="" id="" cols="30" style="font-weight: 700;"
-                            class="text-danger">{{i.Article}}</textarea></td>
+                            class="text-danger text-center" readonly>{{i.Article}}</textarea></td>
                     <td style="font-weight: 700;" class=" text-center text-danger">{{i.Date}}</td>
                     <td style="font-weight: 700;" class=" text-center text-danger">{{i.Regulatory}}</td>
                     <td><textarea name="" id="" cols="30" style="font-weight: 700;"
-                            class="text-danger">{{i.Title}}</textarea></td>
+                            class="text-danger" readonly>{{i.Title}}</textarea></td>
                     <td><textarea name="" id="" cols="30" style="font-weight: 700;"
-                            class="text-danger">{{i.URL}}</textarea></td>
+                            class="text-danger" readonly>{{i.URL}}</textarea></td>
                     <td style="font-weight: 700;" class=" text-center text-danger">{{i.KRIMA_status}}</td>
                     <td style="font-weight: 700;" class=" text-center text-danger">{{i.KRIMA_true_false}}</td>
                     <td style="font-weight: 700;" class=" text-center text-danger">{{i.KRIMA_type}}</td>
@@ -850,12 +851,12 @@
                     <td style="font-weight: 700;" class=" text-center text-danger">
                         {{i.KRIMA_edited_gpt_person_or_business}}</td>
                     <td><textarea name="" id="" cols="30" class=" text-center text-danger"
-                            style="font-weight: 700;">{{i.KRIMA_edited_gpt_company_check}}</textarea></td>
+                            style="font-weight: 700;" readonly>{{i.KRIMA_edited_gpt_company_check}}</textarea></td>
                     <td><textarea name="" id="" cols="30" class=" text-center text-danger"
-                            style="font-weight: 700;">{{i.parent_company_name}}</textarea>
+                            style="font-weight: 700;" readonly>{{i.parent_company_name}}</textarea>
                     </td>
                     <td><textarea name="" id="" cols="30" class=" text-center text-danger"
-                            style="font-weight: 700;">{{i.KRIMA_civil_penalty_validated}}</textarea></td>
+                            style="font-weight: 700;" readonly>{{i.KRIMA_civil_penalty_validated}}</textarea></td>
                     <td style="font-weight: 700;" class=" text-center text-danger">
                         {{i.KRIMA_civil_penalty_cleansed}}
                     </td>
@@ -864,7 +865,7 @@
                     </td>
                     <td>
                         <textarea name="" id="" cols="30" class=" text-center text-danger"
-                            style="font-weight: 700;">{{i.KRIMA_disgorgement_restitution_usd}}</textarea>
+                            style="font-weight: 700;" readonly>{{i.KRIMA_disgorgement_restitution_usd}}</textarea>
                     </td>
                     <td style="font-weight: 700;" class=" text-center text-danger">{{i.KRIMA_imposed_penalty}}
                     </td>
@@ -872,9 +873,8 @@
                     </td>
                     <td>
                         <textarea name="" id="" cols="30" class=" text-center text-danger"
-                            style="font-weight: 700;"> {{i.KRIMA_non_monetary_penalty}}</textarea>
+                            style="font-weight: 700;" readonly> {{i.KRIMA_non_monetary_penalty}}</textarea>
                     </td>
-
 
 
                     {%else%}
@@ -884,26 +884,26 @@
                     <td style="font-weight: 700;" class="text-secondary text-center">{{i.collated_sr_no}}</td>
                     <td style="font-weight: 700;" class="text-secondary text-center">{{i.sr_no}}</td>
                     <td><textarea name="" id="" cols="30" class="text-secondary text-center"
-                            style="font-weight: 700;">{{i.Article}}</textarea></td>
+                            style="font-weight: 700;" readonly>{{i.Article}}</textarea></td>
                     <td style="font-weight: 700;" class="text-secondary text-center">{{i.Date}}</td>
                     <td style="font-weight: 700;" class="text-secondary text-center">{{i.Regulatory}}</td>
                     <td><textarea name="" id="" cols="30" class="text-secondary text-center"
-                            style="font-weight: 700;">{{i.Title}}</textarea></td>
+                            style="font-weight: 700;" readonly>{{i.Title}}</textarea></td>
                     <td><textarea name="" id="" cols="30" class="text-secondary text-center"
-                            style="font-weight: 700;">{{i.URL}}</textarea></td>
+                            style="font-weight: 700;" readonly>{{i.URL}}</textarea></td>
                     <td style="font-weight: 700;" class="text-secondary text-center">{{i.KRIMA_status}}</td>
                     <td style="font-weight: 700;" class="text-secondary text-center">{{i.KRIMA_true_false}}</td>
                     <td style="font-weight: 700;" class="text-secondary text-center">{{i.KRIMA_type}}</td>
                     <td style="font-weight: 700;" class="text-secondary text-center">{{i.KRIMA_notes}}</td>
-                    <td style="font-weight: 700;" class="text-secondary text-center">
+                    <td style="font-weight: 700;" class="text-secondary text-center" >
                         {{i.KRIMA_edited_gpt_person_or_business}}</td>
                     <td><textarea name="" id="" cols="30" class="text-secondary text-center"
-                            style="font-weight: 700;">{{i.KRIMA_edited_gpt_company_check}}</textarea></td>
+                            style="font-weight: 700;" readonly>{{i.KRIMA_edited_gpt_company_check}}</textarea></td>
                     <td><textarea name="" id="" cols="30" class="text-secondary text-center"
-                            style="font-weight: 700;">{{i.parent_company_name}}</textarea>
+                            style="font-weight: 700;" readonly>{{i.parent_company_name}}</textarea>
                     </td>
                     <td><textarea name="" id="" cols="40" class="text-secondary text-center"
-                            style="font-weight: 700;">{{i.KRIMA_civil_penalty_validated}}</textarea></td>
+                            style="font-weight: 700;" readonly>{{i.KRIMA_civil_penalty_validated}}</textarea></td>
                     <td style="font-weight: 700;" class="text-secondary text-center">
                         {{i.KRIMA_civil_penalty_cleansed}}</td>
                     <td style="font-weight: 700;" class="text-secondary text-center">{{i.KRIMA_currency}}</td>
@@ -911,7 +911,7 @@
                         {{i.KRIMA_civil_penalty_usd}}</td>
                     <td>
                         <textarea name="" id="" cols="30" class="text-secondary text-center"
-                            style="font-weight: 700;">{{i.KRIMA_disgorgement_restitution_usd}}</textarea>
+                            style="font-weight: 700;" readonly>{{i.KRIMA_disgorgement_restitution_usd}}</textarea>
                     </td>
                     <td style="font-weight: 700;" class="text-secondary text-center">{{i.KRIMA_imposed_penalty}}
                     </td>
@@ -919,7 +919,7 @@
                     </td>
                     <td>
                         <textarea name="" id="" cols="30" class="text-secondary text-center"
-                            style="font-weight: 700;"> {{i.KRIMA_non_monetary_penalty}}</textarea>
+                            style="font-weight: 700;" readonly> {{i.KRIMA_non_monetary_penalty}}</textarea>
                     </td>
                     {%endif%}
 
