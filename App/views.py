@@ -34,7 +34,7 @@ def Index_Page(request):
                 request.session['uid']=user.id
                 login(request,user)
                 err='no' 
-                messages.success(request,'Login Sucessfully')
+                messages.success(request,'Admin, you have logged in successfully.')
                 return redirect('/dashboard')                
         except:
             # messages.error(request,'Something Went Wrong Please Try Againg')
@@ -44,10 +44,8 @@ def Index_Page(request):
 # Admin Home Page Function
 def AdminDashboard(request):
     user=request.user
-    file_data=My_Upload_file.objects.all()
-    qc=Qc_user.objects.get()  
-    form=qc_Form()  
-    data={'data':file_data,'qc':qc,'form':form}
+    file_data=My_Upload_file.objects.all() 
+    data={'data':file_data}
     try:
         list_date=[]
         date_obj=[]
@@ -499,6 +497,11 @@ def Qc_edit_date(request,id,pid):
         a20=request.POST.get('a20')
         a21=request.POST.get('a21')
         a22=request.POST.get('a22')
+
+        a23=request.POST.get('a23')
+        a24=request.POST.get('a24')
+        a25=request.POST.get('a25')
+        a26=request.POST.get('a26')
         file_obj = my_Qc_data.objects.get(id=id)
         file = file_obj.qc_file
         id=file_obj.id
@@ -520,6 +523,11 @@ def Qc_edit_date(request,id,pid):
         data[pid]['KRIMA_settled_value']=a20
         data[pid]['KRIMA_non_monetary_penalty']=a21
         data[pid]['Ok']=a22
+
+        data[pid]['gpt_area_of_activity_or_service']=a23
+        data[pid]['gpt_area_of_regulation']=a24
+        data[pid]['KRIMA_area_of_activity_or_service']=a25
+        data[pid]['KRIMA_area_of_regulation']=a26
         with open(f'{settings.BASE_DIR}//{file}', 'w') as f:
             json.dump(data,f)
         messages.success(request,'Data Edited Successfully')
@@ -552,6 +560,10 @@ def Qc_edit_date(request,id,pid):
         KRIMA_settled_value=data[pid]['KRIMA_settled_value']
         KRIMA_non_monetary_penalty=data[pid]['KRIMA_non_monetary_penalty']
         ok=data[pid]['Ok']
+        gpt_area_of_activity_or_service=data[pid]['gpt_area_of_activity_or_service']
+        gpt_area_of_regulation=data[pid]['gpt_area_of_regulation']
+        KRIMA_area_of_activity_or_service=data[pid]['KRIMA_area_of_activity_or_service']
+        KRIMA_area_of_regulation=data[pid]['KRIMA_area_of_regulation']
     return render(request,'qc_temps/edit.html',locals())
 
 # # Qc After Apply Filter Then Edit file Function
@@ -585,6 +597,10 @@ def Qc_filter_edit(request, id, pid):
             'KRIMA_settled_value': 'a20',
             'KRIMA_non_monetary_penalty': 'a21',
             'Ok': 'a22',
+            'gpt_area_of_activity_or_service':'a23',
+            'gpt_area_of_regulation':'a24',
+            'KRIMA_area_of_activity_or_service':'a25',
+            'KRIMA_area_of_regulation':'a26',
         }
 
         # Load the JSON file
@@ -637,6 +653,10 @@ def Qc_filter_edit(request, id, pid):
             'ok': data[pid]['Ok'],
             'pid': uid,
             'id': id,
+            'gpt_area_of_activity_or_service':data[pid]['gpt_area_of_activity_or_service'],
+            'gpt_area_of_regulation':data[pid]['gpt_area_of_regulation'],
+            'KRIMA_area_of_activity_or_service':data[pid]['KRIMA_area_of_activity_or_service'],
+            'KRIMA_area_of_regulation':data[pid]['KRIMA_area_of_regulation'],
             
             }
         return render(request, 'qc_temps/filter_edit.html', context)
@@ -1033,6 +1053,12 @@ def Ed_edit_date(request,id,pid):
         a20=request.POST.get('a20')
         a21=request.POST.get('a21')
         a22=request.POST.get('a22')
+        a23=request.POST.get('a23')
+        a24=request.POST.get('a24')
+        a25=request.POST.get('a25')
+        a26=request.POST.get('a26')
+
+        
         file_obj = Editor_push.objects.get(id=id)
         file = file_obj.qc_data.qc_file
         id=file_obj.id
@@ -1054,6 +1080,10 @@ def Ed_edit_date(request,id,pid):
         data[pid]['KRIMA_settled_value']=a20
         data[pid]['KRIMA_non_monetary_penalty']=a21
         data[pid]['Ok']=a22
+        data[pid]['gpt_area_of_activity_or_service']=a23
+        data[pid]['gpt_area_of_regulation']=a24
+        data[pid]['KRIMA_area_of_activity_or_service']=a25
+        data[pid]['KRIMA_area_of_regulation']=a26
         with open(f'{settings.BASE_DIR}//{file}', 'w') as f:
             json.dump(data,f)
         messages.success(request,'Data Edited Successfully')
@@ -1086,6 +1116,10 @@ def Ed_edit_date(request,id,pid):
         KRIMA_settled_value=data[pid]['KRIMA_settled_value']
         KRIMA_non_monetary_penalty=data[pid]['KRIMA_non_monetary_penalty']
         ok=data[pid]['Ok']
+        gpt_area_of_activity_or_service=data[pid]['gpt_area_of_activity_or_service']
+        gpt_area_of_regulation=data[pid]['gpt_area_of_regulation']
+        KRIMA_area_of_activity_or_service=data[pid]['KRIMA_area_of_activity_or_service']
+        KRIMA_area_of_regulation=data[pid]['KRIMA_area_of_regulation']
     return render(request,'editior_temps/ed_edit.html',locals())
 
 # Editor Apply Filetr Then Edit File Function
@@ -1118,6 +1152,10 @@ def Ed_filter_edit(request,id,pid):
             'KRIMA_settled_value': 'a20',
             'KRIMA_non_monetary_penalty': 'a21',
             'Ok':'a22',
+            'gpt_area_of_activity_or_service':'a23',
+            'gpt_area_of_regulation':'a24',
+            'KRIMA_area_of_activity_or_service':'a25',
+            'KRIMA_area_of_regulation':'a26',
         }
          # Load the JSON file
         with open(f'{settings.BASE_DIR}/{file}', 'r') as f:
@@ -1166,6 +1204,10 @@ def Ed_filter_edit(request,id,pid):
             'ok':data[pid]['Ok'],
             'pid':uid,
             'id':id,
+            'gpt_area_of_activity_or_service':data[pid]['gpt_area_of_activity_or_service'],
+            'gpt_area_of_regulation':data[pid]['gpt_area_of_regulation'],
+            'KRIMA_area_of_activity_or_service':data[pid]['KRIMA_area_of_activity_or_service'],
+            'KRIMA_area_of_regulation':data[pid]['KRIMA_area_of_regulation'],
           
         }
         return render(request,'editior_temps/ed_edit.html',context)
@@ -1207,8 +1249,8 @@ def Download(request,id):
     for i in f1:
         del i["GPT_Description_Automated"]
         del i['parent_company_name']
-        if 'Ok' in i:
-            del i['Ok']
+        del i['Ok']
+        del i['method']
         data.append(i)
     # Create a JSON response
     response = HttpResponse(json.dumps(data), content_type='application/json')
@@ -1222,3 +1264,12 @@ def About(request):
 # Feature
 def Feature(request):
     return render(request,'admin_temps/feature.html')
+
+
+# def Delete_user(request,id):
+    
+#         qc_user=Qc_user.objects.get(id=id)
+#         qc_user.delete()
+#         return redirect('/all_user')
+#     # except:
+#     #     return redirect('/dashboard')

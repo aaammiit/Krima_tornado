@@ -85,7 +85,8 @@
                 <form class="row g-3" method="post" action="" style="width: 500px;">
                     {%csrf_token%}
                     <div class="col-md-6">
-                        <label for="inputEmail4" class="form-label" style="color: rgb(209, 83, 15);font-weight: 700;">sr_no</label>
+                        <label for="inputEmail4" class="form-label"
+                            style="color: rgb(209, 83, 15);font-weight: 700;">sr_no</label>
                         <textarea name="a1" id="" cols="22" style="color: #0c0c0a;">{{sr_no}}</textarea>
                     </div>
                     <div class="col-md-6">
@@ -104,17 +105,17 @@
                     <div class="col-6">
                         <label for="inputAddress" class="form-label"
                             style="color: black;font-weight: 700;">KRIMA_status</label>
-                            <select id="inputState" class="form-select" name="a7" style="width: 220px;height:55px;">
-                                <option value="{{KRIMA_status}}">{{KRIMA_status}}</option>
-                                <option value="For QC Head">For QC Head</option>
-                                <option value="For PM Head">For PM Head</option>
-                                <option value="For Client">For Client</option>
-                                <option value="Row Added">Row Added</option>
-                                <option value="Page Not Found/Error">Page Not Found/Error</option>
-                                <option value="Duplicate">Duplicate</option>
-                                <option value="Language Issue">Language Issue</option>
-                            </select>
-                       
+                        <select id="inputState" class="form-select" name="a7" style="width: 220px;height:55px;">
+                            <option value="{{KRIMA_status}}">{{KRIMA_status}}</option>
+                            <option value="For QC Head">For QC Head</option>
+                            <option value="For PM Head">For PM Head</option>
+                            <option value="For Client">For Client</option>
+                            <option value="Row Added">Row Added</option>
+                            <option value="Page Not Found/Error">Page Not Found/Error</option>
+                            <option value="Duplicate">Duplicate</option>
+                            <option value="Language Issue">Language Issue</option>
+                        </select>
+
                     </div>
                     <div class="col-12">
                         <label for="inputAddress" class="form-label"
@@ -154,7 +155,7 @@
                             <option value="Penalty Notice">General Notice</option>
                             <option value="Penalty Notice">Guidance</option>
                             <option value="Penalty Notice">Other</option>
-                            
+
                         </select>
 
                     </div>
@@ -169,6 +170,30 @@
                         <label for="inputAddress" class="form-label"
                             style="color: black;font-weight: 700;">KRIMA_edited_gpt_company_check</label>
                         <textarea name="a12" id="" cols="56">{{KRIMA_edited_gpt_company_check}}</textarea>
+                    </div>
+
+                    <div class="col-md-12">
+                        <label for="inputAddress" class="form-label"
+                            style="color: black;font-weight: 700;">gpt_area_of_activity_or_service</label>
+                        <textarea name="a23" id="" cols="56">{{gpt_area_of_activity_or_service}}</textarea>
+                    </div>
+
+                    <div class="col-md-12">
+                        <label for="inputAddress" class="form-label"
+                            style="color: black;font-weight: 700;">gpt_area_of_regulation</label>
+                        <textarea name="a24" id="" cols="56">{{gpt_area_of_regulation}}</textarea>
+                    </div>
+
+                    <div class="col-md-12">
+                        <label for="inputAddress" class="form-label"
+                            style="color: black;font-weight: 700;">KRIMA_area_of_activity_or_service</label>
+                        <textarea name="a25" id="" cols="56">{{KRIMA_area_of_activity_or_service}}</textarea>
+                    </div>
+
+                    <div class="col-md-12">
+                        <label for="inputAddress" class="form-label"
+                            style="color: black;font-weight: 700;">KRIMA_area_of_regulation</label>
+                        <textarea name="a26" id="" cols="56">{{KRIMA_area_of_regulation}}</textarea>
                     </div>
 
 
@@ -253,7 +278,7 @@
             </div>
         </div>
         </form>
-        
+
         <div class="fixed-top" style="height: 100px;margin-top:80px;margin-left:600px;">
             <p name="a5" id="art" cols="85" rows="60"
                 style="text-align:center;color: rgb(101, 38, 38);font-size:15px ;font-weight: 700;height:500px;width: 680px;margin-left: 20px;overflow-x: scroll;border:2px solid black;">

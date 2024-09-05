@@ -46,6 +46,9 @@ urlpatterns = [
     # Feature Page
     path('feature',v.Feature),
 
+    # # delete user
+    # path('d_user/<int:id>',v.Delete_user),
+
 
     # Qc User Profile Create Url
     path('make_qc',v.Make_Qc),

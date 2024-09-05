@@ -220,17 +220,17 @@
                             <td style="font-size: 16px;font-weight: 500;color:rgb(11, 3, 3);">{{ i.to_date }}</td>
                             <td>
                                 {%if i.status %}
-                                <a href="qc_view_file/{{i.id}}" class="btn btn-warning">view</a>
+                                <a href="qc_view_file/{{i.id}}" class="btn btn-warning" style="width: 70px;" >view</a>
                                 <!-- <a href="" class="btn btn-primary " type="submit" >Push</a> -->
-                                <a href="#" style="width: 100px;" class="btn btn-primary" type="submit">Push <svg
-                                        xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                <a href="#" style="width: 90px;" class="btn btn-primary" type="submit">Push <svg
+                                        xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor"
                                         class="bi bi-check-square-fill" viewBox="0 0 16 16">
                                         <path
                                             d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z" />
                                     </svg></a>
                                 {%else%}
-                                <a href="qc_view_file/{{i.id}}" class="btn btn-warning">view</a>
-                                <a href="qc_push/{{i.id}}" style="width: 100px;" class="btn btn-primary"
+                                <a href="qc_view_file/{{i.id}}" class="btn btn-warning" style="width: 70px;" >view</a>
+                                <a href="qc_push/{{i.id}}" style="width: 70px;" class="btn btn-primary"
                                     type="submit">Push</a>
                                 {%endif%}
                             </td>
@@ -257,9 +257,9 @@
                         <td class="text-center bg-dark" style="width: 160px;">
 
                             <b class=" bg-secondary text-light  py-2 px-2" style="width: 40px;">{{i.unclassified}}</b>
-                            <b class="text-light bg-success  py-2 px-2" style="width: 40px;">{{i.correct}}</b> <b
-                                class="bg-warning text-light   py-2 px-2" style="width: 40px;">{{i.error}}</b> <b
-                                class="bg-danger text-light   py-2 px-2" style="width: 40px;">{{i.rejected}}</b>
+                            <b class="text-light bg-success  py-2 px-2" style="width: 40px;">{{i.correct}}</b> 
+                            <b class="bg-warning text-light   py-2 px-2" style="width: 40px;">{{i.error}}</b>
+                             <b class="bg-danger text-light   py-2 px-2" style="width: 40px;">{{i.rejected}}</b>
                         </td>
 
                     </tr>

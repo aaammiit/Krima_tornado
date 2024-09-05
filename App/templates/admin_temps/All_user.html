@@ -91,6 +91,8 @@
             <th class="text-secondary text-center">Last Name</th>
             <th class="text-secondary text-center">Email</th>
             <th class="text-secondary text-center">Username</th>
+            <!-- <th class="text-danger text-center">Delete User</th> -->
+
         </tr>
         {% for user in users %}
         <tr>
@@ -98,6 +100,7 @@
             <td style="font-weight: 600;" class="text-primary text-center">{{ user.user.last_name }}</td>
             <td style="font-weight: 600;" class="text-primary text-center">{{ user.user.email }}</td>
             <td style="font-weight: 600;" class="text-primary text-center">{{ user.user.username }}</td>
+            <!-- <td><a href="d_user/{{user.id}}">Delete</a></td> -->
         </tr>
         {% endfor %}
     </table>

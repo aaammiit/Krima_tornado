@@ -33,6 +33,7 @@ class my_Qc_data(models.Model):
     end=models.IntegerField()
     status=models.BooleanField(default=False)
     
+    
 
 class qc_Form(forms.ModelForm):
     class Meta:
@@ -65,6 +66,7 @@ class pushForm(forms.ModelForm):
 
 
 class Final_data_PM(models.Model):
+
     Editior=models.ForeignKey(ED_User,on_delete=models.CASCADE)
     Edited_file=models.ForeignKey(Editor_push,on_delete=models.CASCADE)
     date=models.DateField(auto_now=True)    
